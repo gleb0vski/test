@@ -1,0 +1,89 @@
+---
+import CtaButton from "./Cta_button.astro";
+---
+
+<section class="hero">
+    <div class="hero-left">
+        <p class="badge">Бесплатная методичка</p>
+        <h1>Как с помощью трейдинга выйти на <span class="accent-text">стабильные 20%</span> к депозиту ежемесячно</h1>
+        <p>Результат без нервов, совмещая с работой, под руководством опытного трейдера</p>
+        <CtaButton />
+    </div>
+    <div class="hero-right">
+        <img src="./public/7.png" alt="">
+    </div>
+</section> 
+
+<style>
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 48px;
+        line-height: 100%;
+        font-weight: 700;
+    }
+
+    p {
+        width: 40ch;
+        margin: 2rem 0;
+        font-weight: 600;
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .hero > * {
+        flex: 1;
+        width: 50%;
+    }
+
+    .hero-right {
+        background-image: linear-gradient(rgba(255, 255, 255, .1) .05em, transparent .05em), linear-gradient(90deg, rgba(255, 255, 255, .1) .05em, transparent .05em);
+        background-size: 4em 2em;
+        
+    }
+
+    .badge {
+        font-size: 24px;
+        font-weight: 600;
+        color: #222;
+        margin: 10px 0;
+    }
+
+
+    @media (max-width: 1279px) {
+        .hero {
+            flex-direction: column-reverse;
+            margin-top: 0;
+            align-items: normal;
+            gap: 0;
+        }
+
+        .hero > * {
+            width: auto;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        p {
+            width: auto;
+            font-size: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .badge {
+            font-size: 14px;
+        }
+
+    }
+
+</style>

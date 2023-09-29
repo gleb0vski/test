@@ -1,0 +1,64 @@
+---
+
+---
+
+<section class="comments">
+    <h2>Отзывы и результаты</h2>
+    <div class="my-slider">
+        <div><a href="./public/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
+        <div> <img src="./public/slide.png" alt=""></div>
+        <div> <img src="./public/slide.png" alt=""></div>
+        <div> <img src="./public/slide.png" alt=""></div>
+        <div> <img src="./public/slide.png" alt=""></div>
+        <div> <img src="./public/slide.png" alt=""></div>
+    </div>
+</section>
+
+
+<style>
+
+.tns-nav {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.tns-nav > [aria-controls] {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  margin: 0 5px;
+  border-radius: 80%;
+  background: #ddd;
+  border: 0;
+}
+
+
+.tns-nav > [aria-controls].tns-nav-active {
+   background: black;
+}
+</style>
+
+<script>
+  var slider = tns({
+    container: '.my-slider',
+    controls: false,
+    items: 1,
+    nav: true,
+    mouseDrag: true,
+    navPosition: 'bottom',
+    responsive: {
+      640: {
+        edgePadding: 20,
+        gutter: 0,
+        items: 2
+      },
+      700: {
+        gutter: 0
+      },
+      900: {
+        items: 3,
+        gutter: 0
+      }
+    }
+  });
+</script>

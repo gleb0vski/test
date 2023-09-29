@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Reasons from '../components/Reasons.astro';
+import Profit from '../components/Profit.astro';
+import Author from '../components/Author.astro';
+import Comments from '../components/Comments.astro'
+import Cta from '../components/Cta.astro'
+import Footer from '../components/Footer.astro'
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Hero />
+		<Reasons />
+		<Profit />
+		<Author />
+		<Comments />
+		<Cta />
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 1100px;
+		max-width: calc(100% - 2rem);
+		color: #222;
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	img {
+		width: 100%;
+	}
+
+</style>

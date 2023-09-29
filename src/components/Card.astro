@@ -1,0 +1,63 @@
+---
+interface Props {
+	card_content: string;
+	img_src: string;
+}
+
+const { card_content, img_src } = Astro.props;
+---
+
+<li class="card">
+	<img src={img_src} alt="">
+		<p>
+			{card_content}
+		</p>
+</li>
+
+<style>
+
+	.card {
+		list-style: none;
+		padding: 1.5rem;
+		width: 49%;
+		border-radius: 14px;
+		font-size: 17px;
+		background: white;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+		transition: box-shadow .4s ease-in;
+	}
+
+	.card:hover {
+		box-shadow: none;
+	}
+
+	li {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+	
+
+    @media (max-width: 1279px) {
+	
+		.card {
+			width: 100%;
+			padding: 1.5rem;
+		}	
+
+		li {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1.2rem;
+			text-align: center;
+		}
+
+		.card p {
+			padding-bottom: 1.5rem;
+		}
+
+	}
+
+
+</style>

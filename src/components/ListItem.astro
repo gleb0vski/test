@@ -1,0 +1,52 @@
+---
+
+interface Props {
+    list_item_header: string;
+	list_item_content: string;
+}
+
+const { list_item_content, list_item_header } = Astro.props;
+---
+
+<li>
+    <div>
+        <div class="item-text">
+            <h3>{ list_item_header }</h3>
+            <p>{ list_item_content}</p>
+        </div>
+    </div>
+
+</li>
+
+
+<style>
+    p {
+        margin-top: 1rem;
+        font-size: 17px;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        border-radius: 20px;
+    }
+
+    li > div {
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @media (max-width: 1279px) {
+        li {
+            width: 100%;
+            gap: .5rem;
+        }
+
+
+    }
+</style>

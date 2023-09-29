@@ -1,0 +1,66 @@
+---
+import Card from "./Card.astro";
+---
+<section class="reasons">
+
+<h2>Кому будет полезна методичка?</h2>
+
+
+<ul>
+
+    <Card 
+        img_src="./public/family_icon.png"
+        card_content="Проводить время с близкими, а не видеть их только по выходным, засиживаясь на работе и в пробках."
+    />
+
+    <Card 
+        img_src="./public/strategy_icon.png"
+        card_content="Вы уже перебрали много стратегий, которые не работают или думаете с чего начать."
+    />
+
+    <Card 
+        img_src="./public/safe_icon.png"
+        card_content="Вы сможете попробовать торговлю безопасно для своих финансов и на практике оценить свой интерес к теме перед тем, как инвестировать своё время и деньги."
+    />
+
+    <Card 
+        img_src="./public/shield_icon.png"
+        card_content="Вам хочется обрести финансовую свободу и безопасность для себя и своей семьи."
+    />
+
+    <Card 
+        img_src="./public/airplane_icon.png"
+        card_content="Путешествовать с любимыми и зарабатывать из любой точки мира."
+    />
+
+    <Card 
+        img_src="./public/bt_icon.png"
+        card_content="Вы уже понимаете что крипта - это нефть 21 века, но не знаете как выйти на стабильный доход, избежав ошибок."
+    />
+
+</ul>
+
+</section>
+
+<style>
+
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    img {
+        box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    }
+
+    
+    @media (max-width: 1279px) {
+    
+
+
+    }
+
+</style>
