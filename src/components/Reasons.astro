@@ -2,43 +2,44 @@
 import Card from "./Card.astro";
 ---
 <section class="reasons">
+    <div class="wrapper">
+        <h2>Кому будет полезна методичка?</h2>
 
-<h2>Кому будет полезна методичка?</h2>
 
+        <ul>
 
-<ul>
+            <Card 
+                img_src="/test/bt_icon.png"
+                card_content="Вы уже понимаете что крипта - это нефть 21 века, но не знаете как выйти на стабильный доход, избежав ошибок."
+            />
 
-    <Card 
-        img_src="/test/family_icon.png"
-        card_content="Проводить время с близкими, а не видеть их только по выходным, засиживаясь на работе и в пробках."
-    />
+            <Card 
+                img_src="/test/shield_icon.png"
+                card_content="Вам хочется обрести финансовую свободу и безопасность для себя и своей семьи."
+            />
 
-    <Card 
-        img_src="/test/strategy_icon.png"
-        card_content="Вы уже перебрали много стратегий, которые не работают или думаете с чего начать."
-    />
+            <Card 
+                img_src="/test/family_icon.png"
+                card_content="Проводить время с близкими, а не видеть их только по выходным, засиживаясь на работе и в пробках."
+            />
 
-    <Card 
-        img_src="/test/safe_icon.png"
-        card_content="Вы сможете попробовать торговлю безопасно для своих финансов и на практике оценить свой интерес к теме перед тем, как инвестировать своё время и деньги."
-    />
+            <Card 
+                img_src="/test/airplane_icon.png"
+                card_content="Путешествовать с любимыми и зарабатывать из любой точки мира."
+            />
 
-    <Card 
-        img_src="/test/shield_icon.png"
-        card_content="Вам хочется обрести финансовую свободу и безопасность для себя и своей семьи."
-    />
+            <Card 
+                img_src="/test/strategy_icon.png"
+                card_content="Вы уже перебрали много стратегий, которые не работают или думаете с чего начать."
+            />
 
-    <Card 
-        img_src="/test/airplane_icon.png"
-        card_content="Путешествовать с любимыми и зарабатывать из любой точки мира."
-    />
+            <Card 
+                img_src="/test/safe_icon.png"
+                card_content="Вы сможете попробовать торговлю безопасно для своих финансов и на практике оценить свой интерес к теме перед тем, как инвестировать своё время и деньги."
+            />
 
-    <Card 
-        img_src="/test/bt_icon.png"
-        card_content="Вы уже понимаете что крипта - это нефть 21 века, но не знаете как выйти на стабильный доход, избежав ошибок."
-    />
-
-</ul>
+        </ul>
+    </div>
 
 </section>
 
@@ -46,8 +47,8 @@ import Card from "./Card.astro";
 
 
     ul {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 1rem;
         margin-top: 2rem;
     }
@@ -59,7 +60,10 @@ import Card from "./Card.astro";
     
     @media (max-width: 1279px) {
     
-
+        ul {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
 
     }
 

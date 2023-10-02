@@ -1,45 +1,56 @@
 ---
-
+import '../styles/tiny-slider.css'
+import '../styles/lity.min.css'
 ---
 
 <section class="comments">
+  <div class="wrapper">
     <h2>Отзывы и результаты</h2>
     <div class="my-slider">
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
-        <div><a href="/test/slide.png" data-lity> <img src="./public/slide.png" alt=""></a></div>
+        <div><a href="/test/comment_1.jpg" data-lity> <img src="./public/comment_1_1.jpg" alt=""></a></div>
+        <div><a href="/test/comment_1.jpg" data-lity> <img src="./public/comment_1_1.jpg" alt=""></a></div>
+        <div><a href="/test/comment_1.jpg" data-lity> <img src="./public/comment_1_1.jpg" alt=""></a></div>
+        <div><a href="/test/comment_1.jpg" data-lity> <img src="./public/comment_1_1.jpg" alt=""></a></div>
+        <div><a href="/test/comment_1.jpg" data-lity> <img src="./public/comment_1_1.jpg" alt=""></a></div>
     </div>
+  </div>
+    
 </section>
 
 
 <style>
 
-.tns-nav {
-  text-align: center;
-  margin: 10px 0;
-}
+  .comments {
+    padding-bottom: 6rem;
+  }
 
-.tns-nav > [aria-controls] {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  margin: 0 5px;
-  border-radius: 80%;
-  background: #ddd;
-  border: 0;
-}
+  h2 {
+    text-align: left;
+  }
+
+  img {
+    border-radius: 20px;
+  }
+
+     @media (max-width: 1279px) {
+      
+      .comments {
+        padding: 4rem 0;
+      }
 
 
-.tns-nav > [aria-controls].tns-nav-active {
-   background: black;
-}
+      h2 {
+        margin: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+     }
 </style>
 
-<script>
+
+
+<script> 
   var slider = tns({
     container: '.my-slider',
     controls: false,
@@ -50,16 +61,18 @@
     responsive: {
       640: {
         edgePadding: 20,
-        gutter: 0,
-        items: 2
+        gutter: 20,
+        items: 1
       },
       700: {
-        gutter: 0
+        gutter: 20 
       },
       900: {
         items: 3,
-        gutter: 0
+        gutter:50 
       }
     }
   });
 </script>
+
+

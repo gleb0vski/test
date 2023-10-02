@@ -19,16 +19,15 @@ const { card_content, img_src } = Astro.props;
 	.card {
 		list-style: none;
 		padding: 1.5rem;
-		width: 49%;
+		width: 100%;
 		border-radius: 14px;
 		font-size: 17px;
 		background: white;
-		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-		transition: box-shadow .4s ease-in;
+		transition: box-shadow .3s ease-in;
 	}
 
 	.card:hover {
-		box-shadow: none;
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 	}
 
 	li {
@@ -54,6 +53,7 @@ const { card_content, img_src } = Astro.props;
 		}
 
 		.card p {
+			font-size: 17px;
 			padding-bottom: 1.5rem;
 		}
 

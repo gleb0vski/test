@@ -1,0 +1,70 @@
+---
+---
+
+<section class="graph">
+        <div class="chart">
+            <canvas id="myChart"></canvas>
+        </div>
+</section>
+
+<style>
+
+    .chart {
+        background: white;
+        border-radius: 20px;
+        margin-top: 5rem;
+        padding: 2rem;
+        width: 98%;
+        height: 500px;
+		    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+    @media (max-width: 1200px) {
+
+        .chart {
+            padding: .5rem;
+            width: 100%;
+        }
+    }
+
+
+</style>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const pointImage = new Image(30, 30);
+  pointImage.src = './public/dot-icon.svg'
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2016','2017', '2018', '2019', '2020', '2021', '2022'],
+      datasets: [{
+        label: 'Курс Bitcoin',
+        backgroundColor: 'orange',
+        borderColor: '#E33D07',
+        data: [750, 16000, 3600, 12000, 28000, 60000, 40000],
+        borderWidth: 2,
+        tension: 0.4
+      }]
+    },
+    options: {
+      elements: {
+        point: {
+            pointStyle: 'circle',
+        }
+      },
+      layout: {
+        padding: 0
+      },
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: false 
+        },
+        x: {
+            beginAtZero: false 
+        }
+      }
+    }
+  });
+</script>

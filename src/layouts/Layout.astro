@@ -7,19 +7,10 @@
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-		<link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" integrity="sha512-UU0D/t+4/SgJpOeBYkY+lG16MaNF8aqmermRIz8dlmQhOlBnw6iQrnt4Ijty513WB3w+q4JO75IX03lDj6qQNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.css" integrity="sha512-NDcw4w5Uk5nra1mdgmYYbghnm2azNRbxeI63fd3Zw72aYzFYdBGgODILLl1tHZezbC8Kep/Ep/civILr5nd1Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script is:inline src="public/scripts/jquery.js"></script>
+		<script is:inline src="public/scripts/tiny-slider.js"></script>
+		<script is:inline src="public/scripts/lity.min.js"></script>
 
 		<title>CTYPRO</title>
 	</head>
@@ -36,24 +27,55 @@
 		box-sizing: border-box;
 	}
 
+	@font-face {
+		font-family: 'SFPRO';
+		src: url('public/fonts/SF-Pro-Display-Medium.woff') format('woff'),
+			 url('public/fonts/SF-Pro-Display-Medium.woff2') format('woff2');
+		font-weight: medium;
+		font-style: medium;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'SFPRO';
+		src: url('public/fonts/SF-Pro-Display-Regular.woff') format('woff'),
+			 url('public/fonts/SF-Pro-Display-Regular.woff2') format('woff2');
+		font-weight: regular;
+		font-style: regular;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'SFPRO';
+		src: url('public/fonts/SF-Pro-Display-Bold.woff') format('woff'),
+		 	 url('public/fonts/SF-Pro-Display-Bold.woff2') format('woff2');
+		font-weight: bold;
+		font-style: bold;
+		font-display: swap;
+	}
+
+	
+
 	html {
 		scroll-behavior: smooth;
 		overflow-x: hidden;
 	}
 
 	body {
-		font-family: 'SF Pro Display', sans-serif;
+		font-family: 'SFPRO', sans-serif;
 		background: #f5f5f7;
 	}
 
-	section {
-		margin-top: 5%;
+	.wrapper {
+		margin: auto;
+		width: 1100px;
+		max-width: calc(100% - 2rem);
 	}
 
 	h2 {
 		font-size: 40px;
 		line-height: 100%;
-		margin: 12rem 0 5rem 0;
+		margin: 8rem 0 4rem 0;
 		text-align: center;
 		margin-inline: auto;
 	}
@@ -62,7 +84,7 @@
 		line-height: 120%;
 		padding-bottom: .3rem;
 		font-size: 24px;
-		font-weight: 500;
+		font-weight: 600;
 	 }
 
 	p {
@@ -76,6 +98,22 @@
 		list-style: none;
 	}
 
+	.tns-nav {
+		text-align: center;
+		margin-top: 30px;
+		}
+		.tns-nav button{
+		width: 15px;
+		height: 15px;
+		border-radius: 20px;
+		border: none;
+		margin: 0 5px;
+		background-color: #dddddd;
+		}
+		.tns-nav button.tns-nav-active{
+		background-color: #FF5520;
+		}
+
 	@media (max-width: 1279px) {
 		h2 {
 			font-size: 28px;
@@ -88,5 +126,10 @@
 			font-size: 21px;
 			line-height: 1.16667;
 		}
+		
+		.wrapper {
+		}
+
+
 	}
 </style>

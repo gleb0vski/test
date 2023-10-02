@@ -3,110 +3,120 @@ import ListItem from "./ListItem.astro";
 ---
 
 <section class="profit">
+    <div class="wrapper">
         <h2>Из методички ты узнаешь:</h2>
     <div class="profit-content">
-    <div>
-            <ul>
-                <ListItem 
-                    list_item_header="Как превратить 500$ в 10 000$ за пол года"
-                    list_item_content="Без рисков и без нервов. Показываю на простых примерах, с разборами."
-                />
-                <ListItem 
-                    list_item_header="Пошаговый план и стратегии торговли для выхода на постоянный доход"
-                    list_item_content="Повторяй действия опытного трейдера и получай профит."
-                />
-                <ListItem 
-                    list_item_header="Крепкий фундамент трейдинга для новичков или тех, кто уже активно торгует"
-                    list_item_content="Чтобы избежать каши в голове и понять как устроен правильный трейдинг изнутри и не теряли деньги и время в попытках разобраться самостоятельно."
-                />
-                <ListItem 
-                    list_item_header="Неочевидные правила на рынке и рабочие инструменты анализа"
-                    list_item_content="Чтобы вы могли самостоятельно анализировать рынок и понимать его логику, даже если раньше никогда не торговали."
-                />
-                <ListItem 
-                    list_item_header="Секреты активного и пассивного дохода на рынке криптовалюты"
-                    list_item_content="Чтобы вы могли просыпаться от уведомлений о зачислении прибыли на пассиве."
-                />
-            </ul>
-    </div>
-
-    <div>
-
-        <div class="chart">
-            <canvas id="myChart"></canvas>
+        <div>
+                <ul>
+                    <ListItem
+                        number="/test/1.png"
+                        list_item_header="Как превратить 500$ в 10&nbsp;000$ за&nbsp;пол года"
+                        list_item_content="Без рисков и без нервов. Показываю на простых примерах, с&nbsp;разборами."
+                    />
+                    <ListItem 
+                        number="/test/2.png"
+                        list_item_header="Секреты активного и пассивного дохода на рынке криптовалюты"
+                        list_item_content="Чтобы вы могли просыпаться от уведомлений о зачислении прибыли на пассиве."
+                    />
+                    <ListItem 
+                        number="/test/3.png"
+                        list_item_header="Пошаговый план и стратегии торговли для выхода на постоянный доход"
+                        list_item_content="Повторяй действия опытного трейдера и&nbsp;получай&nbsp;профит."
+                    />
+                    <ListItem 
+                        number="/test/4.png"
+                        list_item_header="Неочевидные правила на рынке и&nbsp;рабочие инструменты анализа"
+                        list_item_content="Чтобы вы могли самостоятельно анализировать рынок и понимать его логику, даже если раньше никогда не торговали."
+                    />
+                <!-- <ListItem 
+                        number="/test/5.png"
+                        list_item_header="Крепкий фундамент трейдинга для новичков или тех, кто уже активно торгует"
+                        list_item_content="Чтобы избежать каши в голове и понять как устроен правильный трейдинг изнутри и не теряли деньги и время в попытках разобраться самостоятельно."
+                    /> -->
+                </ul>
+                
+                <div class="card-five">
+                    <div class="item-text">
+                        <img src="/test/5.png" alt="">
+                        <h3>Крепкий фундамент трейдинга для новичков или тех, кто уже активно торгует</h3>
+                        <p>Чтобы избежать каши в голове и понять как устроен правильный трейдинг изнутри и не теряли деньги и время в попытках разобраться&nbsp;рсамостоятельно.</p>
+                    </div>
+                </div>
+        </div>
         </div>
     </div>
-    </div>
+       
 </section>
 
 <style>
 
+    .profit-content {
+        padding-bottom: 8rem;
+    }
 
-    .chart {
-        background: white;
+    .card-five p {
+        margin-top: 1rem;
+        font-size: 17px;
+        color: #6e6e73;
+    }
+
+    .card-five {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         border-radius: 20px;
-        padding: 2rem;
-        width: 98%;
-        height: 500px;
-		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        background: #fff;
+        margin-top: 1rem;
+        background-image: url('/test/card_test.png');
+        background-repeat: no-repeat;
+        background-position: bottom 0 right 0; 
     }
 
 
-    @media (max-width: 1279px) {
+    .card-five img {
+        width: 60px;
+        height: 60px;
+        margin-left: -10px;
+        margin-bottom: 10px;
+
+    }
+
+    .item-text {
+        width: 65%;
+        padding: 2.5rem 6rem 4rem 2.5rem;
+    }
+
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+
+    @media (max-width: 1200px) {
         .profit-content {
             flex-direction: column;
             gap: 4rem;
+            padding-bottom: 4rem;
         }
 
         ul {
-            gap: 3.5rem;
+            gap: 1.5rem;
+           grid-template-columns: 1fr; 
         }
 
-        .chart {
-            padding: .5rem;
+        .card-five {
+            text-align: center;
+            background-size:330px; 
+            margin-top: 1.5rem;
+        }
+
+        .item-text {
             width: 100%;
+            padding: 1.5rem 1rem 14rem 1.5rem;
         }
-    }
 
+    }
 
 </style>
-
-<script>
-  const ctx = document.getElementById('myChart');
-  const pointImage = new Image(30, 30);
-  pointImage.src = './public/dot-icon.svg'
-
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['2016','2017', '2018', '2019', '2020', '2021', '2022'],
-      datasets: [{
-        label: 'Курс Bitcoin',
-        backgroundColor: 'orange',
-        borderColor: '#E33D07',
-        data: [750, 16000, 3600, 12000, 28000, 60000, 40000],
-        borderWidth: 2,
-        tension: 0.4
-      }]
-    },
-    options: {
-      elements: {
-        point: {
-            pointStyle: 'circle',
-        }
-      },
-      layout: {
-        padding: 0
-      },
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          beginAtZero: false 
-        },
-        x: {
-            beginAtZero: false 
-        }
-      }
-    }
-  });
-</script>

@@ -2,22 +2,44 @@
 import CtaButton from "./Cta_button.astro";
 ---
 
-<section class="hero">
-    <div class="hero-left">
-        <p class="badge">Бесплатная методичка</p>
-        <h1>Как с помощью трейдинга выйти на <span class="accent-text">стабильные 20%</span> к депозиту ежемесячно</h1>
-        <p>Результат без нервов, совмещая с работой, под руководством опытного трейдера</p>
-        <CtaButton />
-    </div>
-    <div class="hero-right">
-        <img src="/test/7.png" alt="">
+<section>
+    <div class="wrapper hero">
+
+        <div class="hero-left">
+            <p class="badge">Бесплатная методичка</p>
+            <h1>Как с помощью трейдинга выйти на стабильные 20% к&nbsp; депозиту ежемесячно</h1>
+            <p>Результат без нервов, совмещая с работой, под руководством опытного трейдера</p>
+            <div class="text-with-icon">
+                <img src="/test/dot-icon.svg" alt="">
+                <p>Простыми словами, на живых примерах</p>
+            </div>
+            <div class="text-with-icon">
+                <img src="/test/dot-icon.svg" alt="">
+                <p>От ТОП автора по версии TradingView</p>
+            </div>
+            <CtaButton />
+        </div>
+        <div class="hero-right">
+            <img src="/test/7.png" alt="">
+        </div>
+
     </div>
 </section> 
 
 <style>
 
+    section {
+        background-color: white;
+        padding: 4rem 0;
+        background-image: url('/test/wave.svg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
     img {
         width: 100%;
+        border-radius: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
 
     h1 {
@@ -30,6 +52,8 @@ import CtaButton from "./Cta_button.astro";
         width: 40ch;
         margin: 2rem 0;
         font-weight: 600;
+        color: #6e6e73;
+        font-size: 18px;
     }
 
     .hero {
@@ -50,6 +74,25 @@ import CtaButton from "./Cta_button.astro";
         
     }
 
+    .text-with-icon {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+        margin-top: .5rem;
+    }
+
+    .text-with-icon img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .text-with-icon p {
+        margin: 0;
+        padding: 0;
+        color: #222;
+    }
+
     .badge {
         font-size: 24px;
         font-weight: 600;
@@ -59,11 +102,17 @@ import CtaButton from "./Cta_button.astro";
 
 
     @media (max-width: 1279px) {
+
+        section {
+            background-image: none;
+            padding-top: 1rem;
+        }
         .hero {
             flex-direction: column-reverse;
             margin-top: 0;
             align-items: normal;
             gap: 0;
+            padding: 0 .5rem;
         }
 
         .hero > * {
@@ -72,16 +121,32 @@ import CtaButton from "./Cta_button.astro";
 
         h1 {
             font-size: 1.6rem;
+            line-height: 110%;
         }
 
         p {
             width: auto;
-            font-size: 16px;
+            font-size: 17px;
             margin: 1.5rem 0;
+            font-weight: 500;
         }
 
         .badge {
-            font-size: 14px;
+            font-size: 20px;
+            margin-top: 2rem;
+        }
+        
+        .text-with-icon {
+            margin-top: .4rem;
+        }
+
+        .text-with-icon {
+            align-items: flex-start;
+            gap: .5rem;
+        }
+
+        .text-with-icon img {
+            margin-top: 4px;
         }
 
     }

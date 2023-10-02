@@ -1,28 +1,38 @@
 ---
 ---
 
-<section class="author">
+<section>
+
+    <div class="wrapper author">
+        <img src="/test/author.jpg" alt="">
+
+        <div>
+            <h2>Егор Ганжела</h2>
+            <p class="badge">Автор методички</p>
     
-    <img src="/test/author.jpg" alt="">
-
-    <div>
-        <h2>Егор Ганжела</h2>
-        <p class="badge">Автор методички</p>
-
-        <ul>
-            <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Входит в ТОП аналитиков по версии TradingView.</li>
-            <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Создатель авторских индикаторов для автоматизации и упрощения торговли.  </li>
-            <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Автор канала «EGO Про трейдинг» к анализу которого прислушиваются 10 000 активных трейдеров.</li>
-            <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> 2150 человек уже прошли обучение с нуля и стабильно торгуют.</li>
-            <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Обучаю только на живых примерах из собственного опыта.</li>
-            <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Получает стабильный доход на рынке криптовалют с 2017 года.</li>
-        </ul>
+            <ul>
+                <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Входит в ТОП аналитиков по версии TradingView.</li>
+                <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Создатель авторских индикаторов для автоматизации и упрощения торговли.  </li>
+                <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Автор канала «EGO Про трейдинг» к анализу которого прислушиваются 10 000 активных трейдеров.</li>
+                <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> 2150 человек уже прошли обучение с нуля и стабильно торгуют.</li>
+                <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Обучаю только на живых примерах из собственного опыта.</li>
+                <li><img src="./public/dot-icon.svg" class="dot-icon" alt=""> Получает стабильный доход на рынке криптовалют с&nbsp;2017 года.</li>
+            </ul>
+        </div>
     </div>
+    
 
 </section>
 
 
 <style>
+
+
+    section {
+        background: #fff;
+        padding: 8rem 0;
+    }
+
     img {
         border-radius: 20px;
         width: 50%;
@@ -38,10 +48,9 @@
     .author {
         display: flex;
         align-items: center;
-        padding: 3rem 2rem;
-        gap: 3rem;
-        margin-top: 8rem;
+        gap: 4rem;
         border-radius: 20px;
+        background: #f5f5f7;
     }
 
     .author > * {
@@ -58,27 +67,31 @@
 
     li img {
         margin-top: 4px;
-        width: 12px;
     }
 
     .badge {
-        font-size: 18px;
+        font-size: 24px;
         font-weight: 600;
         padding: .5rem 0;
     }
 
     .dot-icon {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
     }
 
 
 
     @media (max-width: 1279px) {
+
+        section {
+            padding: 4rem 0;
+        }
     
         .author {
             flex-direction: column;
             padding: 1rem;
+            gap: 1rem;
         }
 
         li {
@@ -90,14 +103,18 @@
         }
 
         .badge {
-            padding: 1rem;
+            padding: .5rem 0;
             width: 100%;
+            font-size: 21px;
         }
         
         h2 {
             font-size: 2rem;
         }
 
+        div {
+            padding: 1rem 1rem 3rem .5rem;
+        }
 
 
     }

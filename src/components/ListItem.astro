@@ -1,16 +1,18 @@
 ---
 
 interface Props {
+    number: string;
     list_item_header: string;
 	list_item_content: string;
 }
 
-const { list_item_content, list_item_header } = Astro.props;
+const {number, list_item_content, list_item_header } = Astro.props;
 ---
 
 <li>
     <div>
-        <div class="item-text">
+        <div>
+            <img src={ number } alt="">
             <h3>{ list_item_header }</h3>
             <p>{ list_item_content}</p>
         </div>
@@ -23,29 +25,36 @@ const { list_item_content, list_item_header } = Astro.props;
     p {
         margin-top: 1rem;
         font-size: 17px;
+        color: #6e6e73;
     }
 
     li {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 50%;
         border-radius: 20px;
+        background: #fff;
+        padding: 2.5rem 6rem 4rem 2.5rem;
     }
 
-    li > div {
-        height: 100%;
-    }
 
     img {
-        width: 100%;
+        width: 60px;
+        height: 60px;
+        margin-left: -10px;
+        margin-bottom: 10px;
     }
 
     @media (max-width: 1279px) {
+
         li {
             width: 100%;
             gap: .5rem;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1.5rem 3rem 1.5rem;
         }
+
 
 
     }
