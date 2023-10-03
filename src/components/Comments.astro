@@ -54,22 +54,22 @@ import '../styles/lity.min.css'
   var slider = tns({
     container: '.my-slider',
     controls: false,
-    items: 1,
     nav: true,
+    center: true,
     mouseDrag: true,
+    gutter: 10,
+    edgePadding: 10,
+    fixedWidth: 350,
     navPosition: 'bottom',
     responsive: {
       640: {
-        edgePadding: 20,
-        gutter: 20,
         items: 1
       },
       700: {
-        gutter: 20 
+        items: 2
       },
       900: {
         items: 3,
-        gutter:50 
       }
     }
   });

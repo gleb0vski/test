@@ -9,7 +9,9 @@ import CtaButton from "./Cta_button.astro";
 
             <h2>Хватит наблюдать как другие делают деньги, пора заработать и вам!</h2>
             <p>Жми на кнопку и я отправлю тебе методичку в телеграм!</p>
-            <CtaButton /> 
+           <div class="btn_container">
+                <CtaButton /> 
+            </div>
 
         </div>
     </div>
@@ -24,35 +26,60 @@ import CtaButton from "./Cta_button.astro";
 
     .cta-content {
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
         margin: 3rem 0;
         padding: 4rem 4rem;
         background-color: #f5f5f7;
         border-radius: 20px;
+        background-size: 100%;
+        background-image: url('/test/cta_bg.png');
+        height: 530px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     }
 
     .cta {
         padding: 2rem 0;
-        text-align: center;
+    }
+
+    .btn_container {
+        width: 350px;
     }
     h2 {
-        text-align: center;
         margin: 2rem 0;
+        text-align: left;
+        line-height: 110%;
+        width: 80%;
     }
 
     p {
         font-size: 24px;
+        font-weight: 500;
+        width: 30ch;
     }
 
     @media (max-width: 1279px) {
         .cta-content {
-            padding: 1.5rem 1.5rem;
+            padding: 3rem 1.5rem;
+            height: 610px;
+            background-image: url('/test/cta_bg_mob.png');
+
         }
+
+        h2 {
+            text-align: center; 
+         width: auto;
+         }
 
         p {
             font-size: 21px;
+            width: auto;
+            text-align: center;
+        }
+
+        .btn_container {
+            width: auto;
         }
     }
 </style>

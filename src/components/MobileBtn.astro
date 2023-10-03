@@ -1,0 +1,62 @@
+---
+import CtaButton from "./Cta_button.astro";
+---
+
+
+<div class="sticky-enquiry">
+    <CtaButton />
+</div>
+
+<style>
+    .sticky-enquiry {
+        position:  fixed;
+        display: none;
+        bottom: -60px;
+        opacity: 0.5;
+        /* Change this for the animation speed */  
+        transition: all 0.8s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 2.5rem;
+
+    &.revealed {
+        bottom: 30px;
+        opacity: 1;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2.5rem;
+        z-index: 999;
+    }
+
+    @media screen and (min-width: 1279px) {
+        &.revealed {
+            display: none;
+        }
+    }
+
+
+</style>
+
+<script>
+    // Change this to the value of your own.
+    var scroll_offset = 300;
+    var scroll_offset2 = 1800;
+
+    $(window).scroll(function(){
+        var $this = $(window);
+        if( $('.sticky-enquiry').length ) {
+            if( $this.scrollTop() > scroll_offset ) { 
+                $('.sticky-enquiry').addClass('revealed');
+            }
+            
+            else {
+                $('.sticky-enquiry').removeClass('revealed');
+            }	
+        }
+    });
+</script>

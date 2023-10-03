@@ -1,0 +1,76 @@
+
+---
+import CtaButton from "./Cta_button.astro";
+---
+
+
+<div class="sticky-enquiry">
+    <div class="cta-header-container">
+        <h3>Жми на кнопку и я отправлю тебе методичку в телеграм!</h3>
+        <div class="btn-container">
+            <CtaButton />
+        </div>
+    </div>
+</div>
+
+<style>
+    .sticky-enquiry {
+        position:  fixed;
+        display: none;
+        top: -110px;
+        opacity: 0.5;
+        /* Change this for the animation speed */  
+        transition: all 0.8s ease;
+        display: flex;
+        width: 100%;
+        background: white;
+        height: 110px;
+
+        .cta-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+    &.revealed {
+        top: 0px;
+        opacity: 1;
+        width: 100%;
+        margin: 0 auto;
+        z-index: 999;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .btn-container {
+        margin-top: -32px;
+    }
+
+    @media screen and (max-width: 1279px) {
+        &.revealed {
+            display: none;
+        }
+    }
+
+
+</style>
+
+<script>
+    // Change this to the value of your own.
+    var scroll_offset = 300;
+    var scroll_offset2 = 1800;
+
+    $(window).scroll(function(){
+        var $this = $(window);
+        if( $('.sticky-enquiry').length ) {
+            if( $this.scrollTop() > scroll_offset ) { 
+                $('.sticky-enquiry').addClass('revealed');
+            }
+            
+            else {
+                $('.sticky-enquiry').removeClass('revealed');
+            }	
+        }
+    });
+</script>

@@ -7,11 +7,15 @@ import Author from '../components/Author.astro';
 import Comments from '../components/Comments.astro'
 import Cta from '../components/Cta.astro'
 import Footer from '../components/Footer.astro'
+import MobileBtn from '../components/MobileBtn.astro';
+import CtaHeader from '../components/CtaHeader.astro';
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
+		<CtaHeader />
+		<MobileBtn />
 		<Hero />
 		<Reasons />
 		<Profit />
