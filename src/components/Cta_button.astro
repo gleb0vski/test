@@ -1,6 +1,6 @@
 ---
 ---
-<button onclick="location.href='https://t.me/ego_educationbot?start=link_Z31BURCvkU'" type="button" class="btn"><img src="/test/tele_icon.svg" alt=""> Получить бесплатно</button>
+<a href='https://t.me/ego_educationbot?start=link_Z31BURCvkU' class="btn telegram-bot-link"><img src="/test/tele_icon.svg" alt=""> Получить бесплатно</a>
 
 
 <style>
@@ -10,18 +10,20 @@
         color: #fff;
         cursor: pointer;
         height: 60px;
+        width: 310px;
         margin-top: 1.8rem;
         text-align:center;
         border: none;
-        background-size: 300% 100%;
         padding: 0 2.5rem;
         background: #e85a19;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
         border-radius: 50px;
         transition: all .3s ease-in;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        text-decoration: none;
     }
 
     .btn:hover {
@@ -40,3 +42,15 @@
 
 
 </style>
+
+    <script>
+    // Gets campaign id from get-parameter and populates it to the links with 'telegram-bot-link' class
+    // By default uses some default campaign link
+    var urlParams = new URLSearchParams(window.location.search);
+    var linkId = urlParams.get('l')
+
+    var DEFAULT_LINK_ID = 'Z31BURCvkU'
+    var botLinkHref = 'https://t.me/ego_educationbot?start=link_' + (linkId ? linkId : DEFAULT_LINK_ID)
+
+    document.querySelectorAll('.telegram-bot-link').forEach(link => link.setAttribute('href', botLinkHref))
+  </script>

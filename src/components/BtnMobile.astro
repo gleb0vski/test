@@ -1,0 +1,52 @@
+---
+import CtaButton from "./Cta_button.astro";
+---
+
+
+<div class="mobile-btn" id="myBtn">
+    <CtaButton />
+</div>
+
+<style>
+
+    .mobile-btn {
+        display: none;
+        position: absolute;
+        bottom: 3%;
+        width: 100%;
+        padding: 0 1.5rem;
+        opacity: 0;
+        transition: all .3s ease-out;
+    }
+
+
+    @media screen and (max-width: 1279px) {
+       .mobile-btn { 
+        display: flex;
+        justify-content: center;
+         position: fixed;
+        z-index: 999;
+        }
+    }
+
+
+</style>
+
+<script>
+    // Get the button:
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.visibility = "visible";
+        mybutton.style.opacity = "1";
+    } else {
+        mybutton.style.visibility= "hidden";
+        mybutton.style.opacity = "0";
+    }
+}
+
+</script>
