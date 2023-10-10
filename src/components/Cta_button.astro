@@ -49,8 +49,8 @@
     var urlParams = new URLSearchParams(window.location.search);
     var linkId = urlParams.get('l')
 
-    var DEFAULT_LINK_ID = 'Z31BURCvkU'
-    var botLinkHref = 'https://t.me/ego_educationbot?start=link_' + (linkId ? linkId : DEFAULT_LINK_ID)
+    var DEFAULT_LINK_ID = 'ego_educationbot?start=link_Z31BURCvkU'
+    var botLinkHref = 'https://t.me/' + (linkId ? linkId : DEFAULT_LINK_ID)
 
     document.querySelectorAll('.telegram-bot-link').forEach(link => link.setAttribute('href', botLinkHref))
   </script>
