@@ -6,9 +6,9 @@ import CtaButton from "./Cta_button.astro";
     <div class="wrapper hero">
 
         <div class="hero-left">
-            <p class="badge">Бесплатная методичка</p>
-            <h1><strong>Как с помощью трейдинга выйти на стабильные 20% к&nbsp; депозиту ежемесячно</strong></h1>
-            <p>Результат без нервов, совмещая с работой, под руководством опытного трейдера</p>
+            <p class="badge">БЕСПЛАТНАЯ МЕТОДИЧКА</p>
+            <h1>Как с помощью трейдинга выйти на <span class="colored-heading">стабильные 20%</span> к&nbsp; депозиту ежемесячно</h1>
+            <p>Результат без нервов, совмещая с работой, под&nbsp;руководством опытного трейдера</p>
             <div class="text-with-icon">
                 <img src="dot-icon.svg" alt="">
                 <p>Простыми словами, на живых примерах</p>
@@ -45,14 +45,21 @@ import CtaButton from "./Cta_button.astro";
     h1 {
         font-size: 48px;
         line-height: 100%;
-        font-weight: 700;
+        font-weight: 800;
+        font-family: 'SFPRO-heading', sans-serif;
+        padding: .5rem 0;
+
+    }
+    
+    .colored-heading {
+        color: #E85A19;
     }
 
     p {
         width: 40ch;
-        margin: 2rem 0;
+        margin: 1.5rem 0 1.5rem 0;
         font-weight: 600;
-        color: #6e6e73;
+        color: #222;
         font-size: 18px;
     }
 
@@ -95,7 +102,7 @@ import CtaButton from "./Cta_button.astro";
 
     .badge {
         font-size: 24px;
-        font-weight: 600;
+        font-weight: 500;
         color: #222;
         margin: 10px 0;
     }
