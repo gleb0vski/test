@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "../assets/7.png";
+import dotIcon from "../assets/dot-icon.svg"
 import CtaButton from "./Cta_button.astro";
 ---
 
@@ -12,11 +13,11 @@ import CtaButton from "./Cta_button.astro";
             <h1>Как с помощью трейдинга выйти на <span class="colored-heading">стабильные 20%</span> к&nbsp; депозиту ежемесячно</h1>
             <p>Результат без нервов, совмещая с работой, под&nbsp;руководством опытного трейдера</p>
             <div class="text-with-icon">
-                <img src="dot-icon.svg" alt="">
+                <Image src={dotIcon} alt="" />
                 <p>Простыми словами, на живых примерах</p>
             </div>
             <div class="text-with-icon">
-                <img src="dot-icon.svg" alt="">
+                <Image src={dotIcon} alt="" />
                 <p>От ТОП автора по версии TradingView</p>
             </div>
             <div class="btn-container">
@@ -24,7 +25,7 @@ import CtaButton from "./Cta_button.astro";
             </div>
         </div>
         <div class="hero-right">
-            <Image src={heroImage} alt="">
+            <Image src={heroImage} alt="" />
         </div>
 
     </div>

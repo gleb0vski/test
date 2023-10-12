@@ -7,12 +7,14 @@ interface Props {
 }
 
 const {number, list_item_content, list_item_header } = Astro.props;
+
+
 ---
 
 <li>
     <div>
         <div>
-            <img src={ number } alt="">
+            <img src={ number } alt="" />
             <h3>{ list_item_header }</h3>
             <p>{ list_item_content}</p>
         </div>
