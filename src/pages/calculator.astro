@@ -1,0 +1,339 @@
+---
+import Layout2 from '../layouts/Layout.astro';
+import { getSanity } from '../lib/api'
+import {getSanityFileUrl} from '../lib/urlForImage'
+import Tcard from '../components/Tcard.astro';
+import {urlForImage} from '../lib/urlForImage'
+import Calc from '../components/Calc.astro';
+import Ptext from '../components/Ptext.astro';
+import Footer from '../components/Footer.astro'
+import '../styles/calc-style.css';
+
+const a = await getSanity([`*[_type == "title"]`])
+const b = await getSanity([`*[_type == "testimotionals"]`])
+const c = await getSanity([`*[_type == "links"]`])
+const d = await getSanity([`*[_type == "video"]{
+  "videoURL": videolink.asset->url
+}`])
+
+console.log(d[0].videoURL)
+---
+
+
+
+<Layout2>
+                <video class="video-src" src={d[0].videoURL} autoplay loop muted controls></video>
+    <section class="video-section">
+        <div class="video-content">
+            <div><Ptext body={ a[2].title }/></div>
+            <a href={c[0].links} class="cta-btn">Далее</a>
+        </div>
+    </section>
+
+
+    <section class="calc">
+        <div class="heading"><Ptext body= {a[0].title} /></div>
+        <Calc/>
+
+    </section>
+
+    <section class="testim">
+
+        <div class="heading"><Ptext body= {a[1].title} /></div>
+
+
+        <div class="photos">
+            {b.filter((item, index) => index < 6).map((filteredItem) => (
+                <img src={ urlForImage(filteredItem.image).url() } alt="">
+            ))}
+        </div>
+
+        <div class="t-grid">
+            {b.filter((item, index) => index < 6).map((item) => (
+                <Tcard
+                    name={item.title}
+                    position={item.position}
+                    img_src={urlForImage(item.image)}
+                    description={item.description}
+                    img_comment={urlForImage(item.image2)}
+                />
+            ))}
+        </div>
+    </section>
+    <br><br><br>
+    <section class="testim">
+
+
+        <div class="photos">
+            {b.filter((item, index) => 6 > index && index < 11).map((filteredItem) => (
+                <img src={ urlForImage(filteredItem.image).url() } alt="">
+            ))}
+        </div>
+
+        <div class="t-grid">
+            {b.filter((item, index) => 6 > index && index < 11).map((item) => (
+                <Tcard
+                    name={item.title}
+                    position={item.position}
+                    img_src={urlForImage(item.image)}
+                    description={item.description}
+                    img_comment={urlForImage(item.image2)}
+                />
+            ))}
+        </div>
+    </section>
+<section class="testim">
+
+    <br><br><br>
+
+
+        <div class="photos">
+            {b.filter((item, index) =>  index > 11).map((filteredItem) => (
+                <img src={ urlForImage(filteredItem.image).url() } alt="">
+            ))}
+        </div>
+
+        <div class="t-grid">
+            {b.filter((item, index) => index > 11).map((item) => (
+                <Tcard
+                    name={item.title}
+                    position={item.position}
+                    img_src={urlForImage(item.image)}
+                    description={item.description}
+                    img_comment={urlForImage(item.image2)}
+                />
+            ))}
+        </div>
+    </section>
+    
+    <section class="footer-btn-section"> 
+        <a href={c[0].links} class="cta-btn">Смотреть дальше</a>
+    </section>
+<Footer/>
+</Layout2>
+
+
+
+
+<style>
+
+    section {
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+    }
+
+    .heading {
+        padding: 5rem 0 5rem 0;
+    }
+    
+
+
+.video-section {
+    width: 100%;
+    height: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    background: url('bg.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.video-content {
+    background-color: white;
+    height: 813px;
+    width: 1014px;
+    display: flex;
+    gap: 550px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    padding: 4rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+    outline: 1px solid rgb(214, 214, 214);
+    outline-offset: -14px;
+    margin: 2rem;
+
+}
+
+.video-src {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 800px;
+    margin-top: 250px;
+    border-radius:20px;
+    border: 8px solid #f6f6f6;
+}
+
+.videoSrc-on-scroll {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    margin-top: 0;
+    left: 15%;
+    width: 300px;
+    border-radius:8px;
+    border: 4px solid #f6f6f6;
+}
+
+ 
+
+
+.video-content .text-color {
+    color: blue;
+}
+
+.cta-btn {
+    color: white;
+    background-color: #3063D3;
+    padding: 1rem 5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+
+    padding: 1.5rem 8rem;
+
+    transition: all .3s ease-in-out;
+    z-index: 99;
+}
+
+.cta-btn:hover {
+    background-color: rgb(14, 14, 199);
+}
+
+
+.photos {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 2rem 0;
+}
+
+.photos img {
+    width: 90px;
+    border-radius: 50%;
+}
+
+.t-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.footer-btn-section {
+    display: flex;
+    justify-content: center;
+    padding: 6rem 0 4rem 0;
+}
+
+
+@media (max-width: 1279px) {
+
+    h1 {
+        font-size: 20px;
+    }
+
+
+    .video-section {
+        height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .video-content {
+        width: 100%;
+        
+        height: auto;
+        padding: 4rem 1.5rem 1.5rem 1.5rem;
+        outline-offset: -8px;
+        gap: 68dvw;
+        margin: 0;
+    }
+
+    .video-src {
+        width: 78dvw;
+        margin-top: 280px;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .videoSrc-on-scroll {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0;
+        border: none;
+    }
+
+
+    .cta-btn {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        text-align: center;
+    }
+
+
+    .t-grid {
+        grid-template-columns: 1fr; 
+        padding: 0 1.5rem;
+    }
+
+    .photos {
+        padding: 2rem;
+        gap: 12px;
+    }
+
+    .photos img {
+        width: 10dvw;
+    }
+
+    .lity-container {
+        z-index: 999999999;
+    }
+
+    .lity-content img {
+        padding: 2rem !important;
+    }
+
+    .lity-container img {
+        padding: 0;
+    }
+
+    .lity-wrap {
+        z-index: 99999999999;
+    }
+
+    .heading {
+        padding: 2rem 0 2rem 0;
+    }
+
+    .footer-btn-section {
+        padding: 3rem 1.5rem;
+    }
+
+}
+
+</style>
+
+<script>
+
+function changeCss () {
+  const videoSrc = document.querySelector(".video-src");
+  this.scrollY > 200 ? videoSrc.classList.add("videoSrc-on-scroll") : videoSrc.classList.remove("videoSrc-on-scroll");
+  
+}
+window.addEventListener("scroll", changeCss , false);
+
+</script>
+

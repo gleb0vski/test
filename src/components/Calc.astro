@@ -1,0 +1,165 @@
+---
+---
+
+<section>
+    <div class="content">
+        <div class="content-left">
+            <label for="a">Начальный депозит</label>
+            <input class="a" id="a" type="text" placeholder="Сумма на которую вы планируете торговать">
+            <label for="b">Количество сделок </label>
+            <input class="b" id="b" type="text" placeholder="Количество сделок учеников в месяц (30-100)">
+            <label for="c">Доходность</label>
+            <input class="c" id="c" type="text" placeholder="Доходность за 1 сделку в процентах">
+            <button class="button">Рассчитать</button>
+        </div>
+        <div class="content-right">
+            <p class="result-header">В результате:</p>
+            <p class="result">Ваш депозит будет составлять <span class="sum">0</span>, а с одной сделки вы будете зарабатывать <span class="profit">0</span></p>
+        </div>
+    </div>
+
+</section>
+
+<style>
+
+    .content {
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 0 0 4rem 0;
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 4rem;
+        padding: 4rem;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    outline: 1px solid rgb(236, 236, 236);
+    outline-offset: -14px;
+
+    }
+
+    .content > * {
+        flex: 1;
+    }
+
+    .content-left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .content-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-right .result-header {
+        font-size: 18px;
+        margin-bottom: 2rem;
+        font-weight: 600;
+    }
+
+    .content-right .result {
+        margin-top: .5rem;
+        font-size: 30px;
+    }
+
+    .content-right p {
+        width:100%;
+    }
+
+    .content-right span {
+        font-size: 32px;
+        font-weight: 800;
+        color: #3063D3;
+    }
+
+    input {
+        height: 50px;
+        width: 100%;
+        padding: 1rem 1rem;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    label {
+        margin-bottom: -8px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    button {
+        height: 50px;
+        width: 100%; 
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        color: white;
+        background: #3063D3;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        font-weight: 600;
+    }
+
+    button:hover {
+        background: darkblue;
+    }
+
+    @media (max-width: 1279px) {
+        section {
+            padding: 0rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .content {
+            flex-direction: column;
+            padding: 4rem 2rem;
+        }
+
+        .content-right .result {
+            font-size: 1rem;
+        }
+
+        input::placeholder {
+            font-size: 12px;
+            opacity: .8;
+        }
+
+        .content-right .result-header {
+            margin-bottom: 1rem;
+        }
+
+        .result {
+            line-height: 1.5;
+        }
+
+        .content-right span {
+            font-size: 1.2rem;
+        }
+    }
+
+    
+</style>
+
+<script>
+    const a = document.querySelector('.a');
+    const b = document.querySelector('.b');
+    const c = document.querySelector('.c');
+    const button = document.querySelector('.button');
+    const start = document.querySelector('.start');
+    const sum = document.querySelector('.sum');
+    const profit = document.querySelector('.profit');
+    const allProfit = document.querySelector('.all-profit');
+
+        function calc() {
+            sum.innerHTML =  (a.value * (1 + c.value / 100) ** b.value).toFixed(2);
+            profit.innerHTML = ((sum.innerHTML - a.value)/b.value).toFixed(2);
+        }
+
+        button.addEventListener('click', () => calc());
+
+</script>
