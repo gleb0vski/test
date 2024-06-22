@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 
-    site: 'https://test-gleb.github.io',
+    site: 'https://ego-trade.ru/',
 
     integrations: [
         sanityIntegration({
