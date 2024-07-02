@@ -2,7 +2,10 @@
 ---
 
 <div class="timer">
+  <div>
     <p>Скидка исчезнет через:</p>
+    <p class="timer-desc">Если не понравится – вернём деньги,<br> без лишних вопросов</p>
+  </div>
     <div id="countdown">
     <ul>
       <li><span id="hours"></span>Часов</li>
@@ -11,11 +14,24 @@
       <li style="font-size: 32px">:</li>
       <li><span id="seconds"></span>Секунд</li>
     </ul>
+
+    <p class="timer-desc2">Если не понравится – вернём деньги,<br> без лишних вопросов</p>
+
   </div>
 
 </div>
 
 <style>
+
+  .timer-desc {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .timer-desc2 {
+    display: none;
+  }
 
   ul {
     display: flex;
@@ -54,6 +70,18 @@
   }
 
    @media (max-width: 1279px) {
+
+    .timer-desc {
+      display: none;
+    }
+
+    .timer-desc2 {
+      display: block;
+      text-align: center; 
+      font-weight: 400;
+      font-size: 12px;
+      margin-top: 1rem;
+    }
     .timer {
       flex-direction: column;
       padding: 1rem;

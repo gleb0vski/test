@@ -2,7 +2,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Inter", sans-serif;
 }
 
 body {
@@ -15,8 +14,8 @@ h1 {
     font-size: 36px;
     text-align: center;
     color: #232323;
-    font-family: "Inter", sans-serif;
-    font-weight: 800;
+    font-family: "SFPRO-heading", sans-serif;
+    font-weight: 900;
     width: 30ch;
 }
 
@@ -36,7 +35,7 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     color: #232323;
-    font-family: "Inter", sans-serif;
+    font-family: "SFPRO-heading", sans-serif;
     margin: 0;
     margin-top: 16px;
     width: 30ch;
@@ -66,7 +65,7 @@ footer p {
 
 @media (max-width: 1279px) {
     h1 {
-        font-size: 24px;
+        font-size: 22px;
         padding: 0 1.5rem;
         font-weight: 800;
         line-height: 32px;
