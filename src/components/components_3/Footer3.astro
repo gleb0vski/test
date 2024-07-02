@@ -22,12 +22,13 @@ import dotIcon from "../../assets/dot-icon3.svg"
                     <li>
                         <div class="text-with-icon">
                             <Image src={dotIcon} alt="" />
-                            <p>консультацию-диагностику от Егора Ганжела <br><span>+ бонус на выбор</span></p>
+                            <p>консультацию-диагностику от Егора Ганжела <br></p>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="right">
+                <p class="bonus-desc">Бонус на выбор:</p>
                 <ul>
                     <li>
                         <div class="text-with-icon">
@@ -44,6 +45,7 @@ import dotIcon from "../../assets/dot-icon3.svg"
                 </ul>
             </div>
         </div>
+                <p class="extra-text">Возможность попасть ко мне на индивидуальное обучение по трейдингу и сделать х2-х5 в ближайшие пару месяцев + подбор тарифа конкретно под тебя и твою ситуацию</p>
         <div class="footer-cta-content">
             <Timer />
             <div class="btn-container">
@@ -104,6 +106,11 @@ import dotIcon from "../../assets/dot-icon3.svg"
         margin-bottom: 2rem;
     }
 
+    .extra-text {
+        width: 100%;
+        padding: 4rem 4rem 1rem 4rem;
+    }
+
 
     .btn-content p {
         color: white;
@@ -140,8 +147,18 @@ import dotIcon from "../../assets/dot-icon3.svg"
 
     .footer-content-middle {
         display: flex;
+        align-items: center;
         justify-content: center;
-        gap: 8rem;
+        gap: 4rem;
+    }
+
+    .footer-content-middle > * {
+        flex: 1;
+    }
+
+    .bonus-desc {
+        width: 150px;
+        margin-bottom: 1rem;
     }
 
     .footer-cta-content {
@@ -238,6 +255,14 @@ import dotIcon from "../../assets/dot-icon3.svg"
         width: 100%;
         font-size: 18px;
         padding: 1rem .5rem;
+    }
+
+    .extra-text {
+        padding: 3rem 0;
+    }
+
+    .bonus-desc {
+        margin-top: 2rem;
     }
 
     .footer-cta-content {

@@ -22,7 +22,7 @@ const d = await getSanity([`*[_type == "video"]{
                 <video class="video-src" src={d[0].videoURL} autoplay loop muted controls></video>
     <section class="video-section">
         <div class="video-content">
-            <div><Ptext body={ a[2].title }/></div>
+            <div class="h1-header"><Ptext body={ a[2].title }/></div>
             <a href={c[0].links} class="cta-btn">Далее</a>
         </div>
     </section>
@@ -124,6 +124,17 @@ const d = await getSanity([`*[_type == "video"]{
 
     .heading {
         padding: 5rem 0 5rem 0;
+    }
+
+    .h1-header  strong{
+        font-family: 'SFPRO-heading', sans-serif;
+        font-weight: 900;
+    }
+
+    .h1-header em {
+        font-family: 'SFPRO-heading', sans-serif;
+        font-weight: 900;
+
     }
     
 
