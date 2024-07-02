@@ -1,6 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import dotIcon from "../../assets/dot-icon3.svg"
+import { getSanity } from '../../lib/api'
+
+const d = await getSanity([`*[_type == "video2"]{
+  "videoURL": videolink2.asset->url
+}`])
 ---
 
 <section>
@@ -32,7 +37,7 @@ import dotIcon from "../../assets/dot-icon3.svg"
             
         </div>
         <div class="hero-right">
-            <video class="video-src" src="../../public/video.mp4" autoplay loop muted controls></video>
+            <video class="video-src" src={d[0].videoURL} autoplay loop muted controls></video>
             <div class="hero-video-bottom-content">
                 <div class="hero-video-bottom">
                     <p>Смотри видео</p>
