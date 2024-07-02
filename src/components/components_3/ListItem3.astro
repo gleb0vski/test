@@ -1,0 +1,98 @@
+---
+
+interface Props {
+    number: string;
+	list_item_content: string;
+    li1: string;
+    li2: string;
+    li3: string;
+    li4: string;
+}
+
+const {number, list_item_content, li1 , li2 , li3 , li4} = Astro.props;
+
+
+---
+
+<li class="li-card">
+    <div>
+        <div>
+            <img src={ number } alt="" />
+            <p>{list_item_content}</p>
+            <ul class="content-ul">
+                <li>{li1}</li>
+                <li>{li2}</li>
+                <li>{li3}</li>
+                <li>{li4}</li>
+            </ul>
+        </div>
+    </div>
+
+</li>
+
+
+<style>
+    p {
+        margin-top: 1rem;
+        font-size: 17px;
+        color: white;
+    }
+
+    ul {
+        list-style: circle !important;
+    }
+
+    .content-ul {
+        margin-top: 1rem;
+        font-size: 17px;
+        color: white;
+    }
+
+    .content-ul li {
+        margin-top: 1rem;
+        margin-left: 16px;
+    }
+
+    .li-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 20px;
+        background: rgb(99,155,250);
+        background: -moz-radial-gradient(circle, rgba(99,155,250,1) 13%, rgba(48,99,211,1) 100%);
+        background: -webkit-radial-gradient(circle, rgba(99,155,250,1) 13%, rgba(48,99,211,1) 100%);
+        background: radial-gradient(circle, rgba(99,155,250,1) 13%, rgba(48,99,211,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#639bfa",endColorstr="#3063d3",GradientType=1);
+        padding: 2.5rem 6rem 4rem 2.5rem;
+    }
+
+
+    img {
+        width: 160px;
+        height: 160px;
+        margin-left: 0px;
+        margin-top: -30%;
+        bottom: 0px;
+
+    }
+
+    @media (max-width: 1279px) {
+
+        .li-card {
+            width: 100%;
+            gap: .5rem;
+            align-items: center;
+            padding: 1.5rem 1.5rem 3rem 1.5rem;
+        }
+
+        img {
+            position: relative;
+            left:50%;
+            transform: translateX(-50%);
+            margin: 2rem 0;
+        }
+
+
+
+    }
+</style>

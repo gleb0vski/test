@@ -1,0 +1,332 @@
+---
+import { Image } from "astro:assets";
+import dotIcon from "../../assets/dot-icon3.svg"
+---
+
+<section>
+    <div class="wrapper hero">
+
+        <div class="hero-left">
+            <h1><span>Воспользуйся специальным</span><br><span class="bottom-heading">предложением Тест-драйв</span></h1>
+            <p>И определи как именно тебе вырасти в заработке х2-х20 в 2024 году через системный трейдинг и начать получать профит с каждой сделки</p>
+            <div class="content-desktop">
+                <p><span class="colored-heading">На тест-драйве ты получишь:</span></p>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>стратегию торговли с полным объяснением</p>
+                </div>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>консультацию-диагностику от Егора Ганжела <br><span>+ бонус на выбор</span></p>
+                </div>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>авторский индикатор для торговли по стратегии</p>
+                </div>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>методичку по трейдингу <br><span>+ видео как в примере выше</span></p>
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="hero-right">
+            <video class="video-src" src="../../public/video.mp4" autoplay loop muted controls></video>
+            <div class="hero-video-bottom-content">
+                <div class="hero-video-bottom">
+                    <p>Смотри видео</p>
+                    <img src="arrow.svg" alt="">
+                </div>
+            </div>
+        </div>
+            <div class="content-mobile">
+                <p><span class="colored-heading">На тест-драйве ты получишь:</span></p>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>стратегию торговли с полным объяснением</p>
+                </div>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>консультацию-диагностику от Егора Ганжела <br><span>+ бонус на выбор</span></p>
+                </div>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>авторский индикатор для торговли по стратегии</p>
+                </div>
+                <div class="text-with-icon">
+                    <Image src={dotIcon} alt="" />
+                    <p>методичку по трейдингу <br><span>+ видео как в примере выше</span></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section> 
+
+<style>
+     
+    :root {
+        --text-color: #3063D3;
+    }
+
+    .hero-video-bottom-content {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .content-mobile {
+        display: none;
+    }
+
+.videoSrc-on-scroll {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    margin-top: 0;
+    left: 15%;
+    width: 300px;
+    border-radius:8px;
+    border: 4px solid #f6f6f6;
+}
+
+
+    .hero-video-bottom {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+
+    .hero-video-bottom > * {
+        flex:1;
+    }
+
+    .hero-video-bottom-content p {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text-color);
+    }
+    
+
+    .hero-video-bottom img {
+        width: 100%;
+        height: 24px;
+        transform: rotate(30deg);
+        align-self: flex-start;
+        margin-right: -90px;
+        margin-bottom: -18px;
+    }
+
+    section {
+        background-color: white;
+        padding: 4rem 0;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 130%;
+        font-weight: 800;
+        font-family: 'SFPRO-heading', sans-serif;
+    }
+
+    h1 {
+        padding: .5rem 0;
+        background: var(--text-color);
+        color: #fff;
+    padding: 1rem 1.5rem;
+	border-radius: 8px;
+    position: relative;
+
+    }
+
+   video {
+       width: 100%;
+       border-radius: 8px;
+       border: 8px solid white;
+       box-shadow: 0px 0px 20px 1px rgba(147,147,147,0.3);
+   } 
+    
+    .colored-heading {
+        color: var(--text-color);
+    }
+
+    p {
+        width: 40ch;
+        margin: 1.5rem 0 1.5rem 0;
+        font-weight: 600;
+        color: #222;
+        font-size: 18px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 4rem;
+    }
+
+    .hero > * {
+    }
+
+    .hero-right {
+        background-image: linear-gradient(rgba(255, 255, 255, .1) .05em, transparent .05em), linear-gradient(90deg, rgba(255, 255, 255, .1) .05em, transparent .05em);
+        background-size: 4em 2em;
+        width: 55%;
+        
+    }
+
+    .hero-left {
+        width: 45%;
+    }
+
+    .text-with-icon {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .text-with-icon img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .text-with-icon p {
+        margin: 0;
+        padding: 0;
+        color: #222;
+        font-weight: 300;
+        line-height: 20px;
+    }
+
+
+
+    @media (max-width: 1279px) {
+
+        section {
+            background-image: none;
+            padding-top: 1rem;
+        }
+
+    .videoSrc-on-scroll {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0;
+    }
+
+        .content-desktop {
+            display: none;
+        }
+
+        .content-mobile {
+            display: block;
+        }
+
+        .content-mobile p {
+            margin-top: 0;
+            font-weight: 700;
+            text-align: left;
+            margin-top: 8px;
+
+        }
+
+        .content-mobile .text-with-icon p {
+            font-weight: 500;
+            text-align: left;
+            margin-top: -2px;
+        }
+
+        .hero {
+            flex-direction: column;
+            margin-top: 0;
+            align-items: normal;
+            gap: 1rem;
+            padding: 0 .5rem;
+        }
+
+        .hero > * {
+            width: auto;
+        }
+
+        .hero-right {
+            padding: 0;
+        }
+
+        .hero-left p {
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .hero-video-bottom img {
+            margin-right: 0;
+            height: 16px;
+            margin-top: 8px;
+        }
+
+        .hero-video-bottom p {
+            margin-left: -90px;
+        }
+
+        h1 {
+            font-size: 20px;
+            line-height: 110%;
+            font-weight: 900;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            width: auto;
+            font-size: 17px;
+            margin: 1.5rem 0;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .badge {
+            font-size: 20px;
+            margin-top: 1rem;
+        }
+        
+        .text-with-icon {
+            margin-top: .4rem;
+        }
+
+        .text-with-icon {
+            align-items: flex-start;
+            gap: .5rem;
+        }
+
+        .text-with-icon img {
+            margin-top: 4px;
+        }
+
+    }
+
+</style>
+
+<script>
+
+function changeCss () {
+  const videoSrc = document.querySelector(".video-src");
+  this.scrollY > 200 ? videoSrc.classList.add("videoSrc-on-scroll") : videoSrc.classList.remove("videoSrc-on-scroll");
+  
+}
+window.addEventListener("scroll", changeCss , false);
+
+</script>

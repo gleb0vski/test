@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero3 from '../components/components_3/Hero3.astro';
+import Profit3 from '../components/components_3/Profit3.astro';
+import Author3 from '../components/components_3/Author3.astro';
+import Bonus3 from '../components/components_3/Bonus3.astro';
+import Why3 from '../components/components_3/Why3.astro';
+import Footer3 from '../components/components_3/Footer3.astro';
+import Footer from '../components/Footer.astro'
+import Comments3 from '../components/components_3/Comments3.astro';
+import '../styles/makemoney-style.css';
+---
+
+<Layout>
+ <Hero3 />   
+ <Profit3 />
+ <Bonus3 />
+ <Author3 />
+ <Why3 />
+ <Comments3 />
+ <Footer3 />
+ <Footer />
+</Layout>
+
+<style>
+    :root {
+        --text-color: #3063D3;
+    }
+    body {
+        background: white;
+    }
+
+    h2 {
+        color: var(--clr-text);
+    }
+</style>
+
+
+<script>
+
+function changeCss () {
+  const videoSrc = document.querySelector(".video-src");
+  this.scrollY > 200 ? videoSrc.classList.add("videoSrc-on-scroll") : videoSrc.classList.remove("videoSrc-on-scroll");
+  
+}
+window.addEventListener("scroll", changeCss , false);
+
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var linkId = urlParams.get('l')
+
+    var DEFAULT_LINK_ID = 'ego_educationbot?start=link_Z31BURCvkU'
+    var botLinkHref = 'https://t.me/' + (linkId ? linkId : DEFAULT_LINK_ID)
+
+    document.querySelectorAll('.telegram-bot-link').forEach(link => link.setAttribute('href', botLinkHref))
+
+</script>
+
+

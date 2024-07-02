@@ -1,0 +1,35 @@
+
+
+strong {
+    font-weight: 900;
+    letter-spacing: -.5px;
+}
+
+
+em {
+    color: #3063D3;
+    font-style: normal;
+}
+
+.lity-container img{
+    padding: 8rem;
+}
+
+footer {
+    background-color: #232323 !important;
+}
+
+footer a {
+    color: rgb(180, 180, 180) !important;
+}
+
+footer p {
+    color: rgb(179, 179, 179) !important;
+}
+
+@media (max-width: 1279px) {
+
+    .lity-container img {
+        padding: 1.5rem;
+    }
+}

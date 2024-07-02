@@ -1,0 +1,169 @@
+---
+import Btn3 from './Btn3.astro';
+---
+
+<section>
+    <div class="bonus-header">
+        <img src="/arrow_left.svg" class="arrow-left" alt="">
+        <h2>Бонус на выбор:</h2>
+        <img src="/arrow.svg" class="arrow-right" alt="">
+    </div>
+    <div class="bonus-grid">
+        <div class="bonus-left">
+            <img src="/bonus1.jpg" alt="">
+            <p class="bonus-heading"> Авторский индикатор для торговли по стратегии</p>
+            <p>Вы получите доступ к индикатору на 2 месяца  + полное руководство по использованию, благодаря чему:</p>
+            <ul>
+                <li>Сможете в 1 клик определять рыночный тренд на любой монете и на любом ТФ, что в 5 раз экономит время на анализ рынка.</li>
+                <li>Сможете открывать сделки по стратегии и зарабатывать уже через пару часов</li>
+            </ul>
+        </div>
+        <div class="bonus-right">
+            <img src="/bonus2.jpg" alt="">
+            <p class="bonus-heading">Авторская методичка по трейдингу</p>
+            <p>Вы получите PDF методичку, в которой описаны важные аспекты трейдинга, благодаря чему: 
+            </p>
+            <ul>
+                <li>сможете применять свечные паттерны</li>
+                <li>будете знать как торговать фигуры ТА</li>
+                <li>сможете распечатать и использовать как шпаргалку при торговле</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn-content">
+        <Btn3 />
+    </div>
+</section>
+
+<style>
+
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    h2 {
+        margin: 4rem 0;
+        color: #3063D3  !important;
+        text-transform: uppercase;
+    }
+
+    img {
+        width: 8%;
+    }
+
+    .bonus-grid img {
+        width: 80%;
+    }
+
+    .bonus-right, .bonus-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .arrow-right {
+        transform: rotate(220deg);
+        margin-top: 60px;
+        margin-left: 30px;
+    }
+
+    .arrow-left {
+        transform: rotate(320deg);
+        margin-top: 60px;
+        margin-right: 30px;
+    }
+
+    .bonus-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .bonus-grid > * {
+        border: 3px solid #3063D3;
+        border-radius: 20px;
+        flex: 1;
+        padding: 0 2rem 4rem 2rem;
+        box-shadow: 0px 0px 20px 1px rgba(147,147,147,0.3);
+    }
+
+    .bonus-grid {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        margin-top: 2rem;
+        justify-content: stretch;
+
+    }
+
+    .bonus-right ul {
+        list-style: circle !important;
+        margin-left: 1.2rem;
+    }
+
+    .bonus-right li {
+        margin-top: 1rem;
+    }
+
+    .bonus-left ul {
+        list-style: circle !important;
+        margin-left: 1.2rem;
+    }
+
+    .bonus-left li {
+        margin-top: 1rem;
+    }
+
+    .bonus-heading {
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 120%;
+        padding-bottom: 1rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .btn-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (max-width: 1279px) {
+        .bonus-grid {
+            flex-direction: column;
+            padding: 0 1.5rem;
+            gap: 2rem;
+        }
+
+        h2 {
+            font-size: 32px !important;
+            margin: 0;
+            margin-top: 2rem;
+            text-transform: uppercase;
+        }
+
+        .arrow-left {
+            display: none;
+        }
+        .arrow-right{
+            display: none;
+        }
+
+        .bonus-grid img {
+            width: 100%;
+        }
+
+        .bonus-heading {
+            font-size: 20px;
+            padding-top: 1rem;
+        }
+
+        li {
+            font-size: 17px;
+        }
+    }
+</style>

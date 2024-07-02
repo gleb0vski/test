@@ -1,0 +1,123 @@
+---
+---
+
+<div class="timer">
+    <p>Скидка исчезнет через:</p>
+    <div id="countdown">
+    <ul>
+      <li><span id="hours"></span>Часов</li>
+      <li style="font-size: 32px">:</li>
+      <li><span id="minutes"></span>Минут</li>
+      <li style="font-size: 32px">:</li>
+      <li><span id="seconds"></span>Секунд</li>
+    </ul>
+  </div>
+
+</div>
+
+<style>
+
+  ul {
+    display: flex;
+    gap: .5rem;
+  }
+
+  p {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .timer {
+    display: flex;
+    gap: 2rem;
+    padding: 1.9rem 2rem;
+    background-color: #3063D3;
+    color: white;
+
+    align-items: flex-start;
+
+    border-radius: 20px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  span {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+   @media (max-width: 1279px) {
+    .timer {
+      flex-direction: column;
+      padding: 1rem;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    ul {
+      gap: .5rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    li {
+      font-size: 12px;
+    }
+   }
+
+</style>
+
+
+<script>
+
+  
+ var timer;
+
+var compareDate = new Date();
+compareDate.setDate(compareDate.getDate() + 2); //just for this demo today + 7 days
+
+timer = setInterval(function() {
+  timeBetweenDates(compareDate);
+}, 1000);
+
+function timeBetweenDates(toDate) {
+  var dateEntered = toDate;
+  var now = new Date();
+  var difference = dateEntered.getTime() - now.getTime();
+
+  if (difference <= 0) {
+
+    // Timer done
+    clearInterval(timer);
+  
+  } else {
+    
+    var seconds = Math.floor(difference / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+
+    hours %= 48;
+    minutes %= 60;
+    seconds %= 60;
+
+    $("#hours").text(hours);
+    $("#minutes").text(minutes);
+    $("#seconds").text(seconds);
+  }
+}
+
+
+</script>

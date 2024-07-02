@@ -1,0 +1,124 @@
+---
+import ListItem from "./ListItem3.astro";
+---
+
+<section class="profit">
+    <div class="wrapper">
+        <h2>Как проходит <br>Тест-драйв</h2>
+    <div class="profit-content">
+        <div>
+                <ul>
+                    <ListItem
+                        number="/bitcoin.webp"
+                        list_item_content=" Изучаем стратегию торговли, благодаря которой ты сможешь заработать первые деньги уже сегодня или если уже торгуешь - увеличишь количество успешных сделок. Получишь полное и пошаговое руководство как работать со стратегией и какие инструменты применять."
+                        li1="работает как в лонг, так и в шорт"
+                        li2="работает как на бычьем, так и на медвежьем рынке"
+                        li3="позволила заработать только на Биткоине 570%"
+                        li4="позволила выкупить монеты перед огромным ростом и заработать 5X"
+                    />
+                    <ListItem 
+                        number="/laptop.webp"
+                        list_item_content="Списываемся и проводим консультацию-диагностику, на которой:"
+                        li1="проанализируем и поймем твой реальный текущий уровень в трейдинге"
+                        li2="определим каких знаний/инструментов тебе не хватает для стабильного заработка"
+                        li3="дадим рекомендации и четкий план, что необходимо сделать/исправить/докрутить, чтобы зарабатывать кратно больше в ближайшее время"
+                        li4="подберем программу основного обучения конкретно под тебя "
+                    />
+                </ul>
+        </div>
+        </div>
+        <div class="line"></div>
+    </div>
+       
+</section>
+
+<style>
+
+    :root {
+        --text-color: #3063D3;
+    }
+
+    .line {
+        width: 300px;
+        height: 4px;
+        background-color: #3063D3;
+        position: relative;
+        left: 40%;
+        top: -270px;
+        z-index: -1;
+
+    }
+
+    h2 {
+        margin: 2rem !important;
+        font-size: 48px !important;
+        line-height: 120%;
+        color: #3063D3  !important;
+        text-transform: uppercase;
+        font-weight: 900 !important;
+        margin-bottom: 8rem !important;
+
+    }
+
+    .profit-content {
+        padding-bottom: 2rem;
+        margin-top: 100px;
+    }
+
+
+    .item-text {
+        width: 65%;
+        padding: 2.5rem 6rem 4rem 2.5rem;
+    }
+
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+
+    @media (max-width: 1279px) {
+        .profit-content {
+            flex-direction: column;
+            gap: 4rem;
+            padding-bottom: 2rem;
+        }
+
+        ul {
+            gap: 1.5rem;
+           grid-template-columns: 1fr; 
+        }
+
+        .card-five {
+            text-align: center;
+            background-size:330px; 
+            margin-top: 1.5rem;
+        }
+
+        .item-text {
+            width: 100%;
+            padding: 1.5rem 1rem 14rem 1.5rem;
+        }
+
+        .line {
+            display: none;
+        }
+
+        h2 {
+            margin: 0 !important;
+            font-size: 32px !important;
+        }
+
+        .profit-content {
+            margin-top: 2rem;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+    }
+
+</style>

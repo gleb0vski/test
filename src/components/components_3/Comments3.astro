@@ -1,0 +1,104 @@
+---
+import { getSanity } from '../../lib/api'
+import Tcard from '../../components/Tcard.astro';
+const b = await getSanity([`*[_type == "testimotionals"]`])
+import {urlForImage} from '../../lib/urlForImage'
+---
+
+
+    <section class="testim">
+        <h2>КТО УЖЕ <span style="color: #3063D3">ЗАРАБОТАЛ</span>ЗАРАБОТАЛ<br> на тест-драйве</h2>
+
+
+        <div class="photos">
+            {b.filter((item, index) => 6 > index && index < 11).map((filteredItem) => (
+                <img src={ urlForImage(filteredItem.image).url() } alt="">
+            ))}
+        </div>
+
+        <div class="t-grid">
+            {b.filter((item, index) => 6 > index && index < 11).map((item) => (
+                <Tcard
+                    name={item.title}
+                    position={item.position}
+                    img_src={urlForImage(item.image)}
+                    description={item.description}
+                    img_comment={urlForImage(item.image2)}
+                />
+            ))}
+        </div>
+        <div class="photos">
+            {b.filter((item, index) => 6 > index && index < 11).map((filteredItem) => (
+                <img src={ urlForImage(filteredItem.image).url() } alt="">
+            ))}
+        </div>
+
+        <div class="t-grid">
+            {b.filter((item, index) => 6 > index && index < 11).map((item) => (
+                <Tcard
+                    name={item.title}
+                    position={item.position}
+                    img_src={urlForImage(item.image)}
+                    description={item.description}
+                    img_comment={urlForImage(item.image2)}
+                />
+            ))}
+        </div>
+    </section>
+
+
+    <style>
+
+    .testim {
+        margin-top: 2rem;
+    }
+    
+    
+.t-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+.photos {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+    justify-content: center;
+    padding: 0 0 2rem 0;
+}
+
+.photos img {
+    width: 90px;
+    border-radius: 50%;
+}
+
+@media (max-width: 1279px) {
+
+
+
+    .t-grid {
+        grid-template-columns: 1fr; 
+        padding: 0 1.5rem;
+    }
+
+    .photos {
+        padding: 2rem;
+        gap: 12px;
+        margin-top: 1rem;
+    }
+
+    .photos img {
+        width: 10dvw;
+    }
+
+}
+
+
+    </style>
+
+
