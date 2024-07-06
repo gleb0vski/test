@@ -41,7 +41,7 @@ const d = await getSanity([`*[_type == "video"]{
 
         <div class="photos">
             {b.filter((item, index) => index < 6).map((filteredItem) => (
-                <img src={ urlForImage(filteredItem.image).url() } alt="">
+                <img src={ urlForImage(filteredItem.image).url() } alt="photo">
             ))}
         </div>
 

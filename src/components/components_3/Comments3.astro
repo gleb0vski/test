@@ -12,7 +12,7 @@ import {urlForImage} from '../../lib/urlForImage'
 
         <div class="photos">
             {b.filter((item, index) => 6 > index && index < 11).map((filteredItem) => (
-                <img src={ urlForImage(filteredItem.image).url() } alt="">
+                <img src={ urlForImage(filteredItem.image).url() } alt="photo">
             ))}
         </div>
 
