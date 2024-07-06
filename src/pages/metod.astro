@@ -62,13 +62,13 @@ const d = await getSanity([`*[_type == "video"]{
 
 
         <div class="photos">
-            {b.filter((item, index) => 6 > index && index < 11).map((filteredItem) => (
+            {b.filter((item, index) => index > 5 && index < 12).map((filteredItem) => (
                 <img src={ urlForImage(filteredItem.image).url() } alt="">
             ))}
         </div>
 
         <div class="t-grid">
-            {b.filter((item, index) => 6 > index && index < 11).map((item) => (
+            {b.filter((item, index) => index > 5 && index < 12).map((item) => (
                 <Tcard
                     name={item.title}
                     position={item.position}
