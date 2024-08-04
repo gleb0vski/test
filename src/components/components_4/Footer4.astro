@@ -1,0 +1,320 @@
+---
+import Timer from "../../components/components_3/Timer.astro";
+import { Image } from "astro:assets";
+import dotIcon from "../../assets/dot-icon3.svg"
+---
+<section id="cta">
+    <div class="footer-section">
+        <div class="footer-content-top">
+            <h2>Воспользуйся специальным<br> предложением Тест-драйв</h2>
+            <p>И определи как именно тебе вырасти в заработке  х2-х20 в 2024 году через системный трейдинг и начать получать профит с каждой сделки</p>
+        </div>
+        <div class="description"><p>На тест-драйве ты получишь:</p></div>
+        <div class="footer-content-middle">
+            <div class="left">
+                <ul>
+                    <li>
+                        <div class="text-with-icon">
+                            <Image src={dotIcon} alt="" />
+                            <p>стратегию торговли с полным объяснением</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-with-icon">
+                            <Image src={dotIcon} alt="" />
+                            <p>консультацию-диагностику от Егора Ганжела <br></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <p class="bonus-desc">Бонус на выбор:</p>
+                <ul>
+                    <li>
+                        <div class="text-with-icon">
+                            <Image src={dotIcon} alt="" />
+                            <p>авторский индикатор для торговли по стратегии</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text-with-icon">
+                            <Image src={dotIcon} alt="" />
+                            <p>методичку по трейдингу <br><span>+ видео как в примере выше</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+                <p class="extra-text">Возможность попасть на индивидуальное обучение по трейдингу и сделать х2-х5 в ближайшие пару месяцев + подбор тарифа конкретно под тебя и твою ситуацию</p>
+        <div class="footer-cta-content">
+            <Timer />
+            <div class="btn-container">
+                <a href="#" class="telegram-bot-link">
+                    <div class="btn-content">
+                        <p class="btn-content-header">Получить тест-драйв</p>
+                        <p class="btn-price">за 2590 р.</p>
+                        <p class="old-price">Вместо 15000р</p>
+                    </div>
+                    <img src="/circle_arrow.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    .old-price {
+        font-weight: 200;
+        font-size: 14px;
+        text-decoration: line-through;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 8rem;
+        padding-top: 6rem;
+
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        margin: 0;
+        margin-bottom: 2rem;
+        font-weight: 900;
+        font-size: 40px;
+        font-family: 'SFPRO-heading', sans-serif;
+        padding: .5rem 0;
+        background: #3063D3;
+        color: #fff;
+    padding: .7rem 2rem;
+	border-radius: 12px;
+    text-transform: uppercase;
+    line-height: 130%;
+
+    }
+
+    p {
+        width: 65ch;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    .extra-text {
+        width: 100%;
+        padding: 4rem 4rem 1rem 4rem;
+    }
+
+
+    .btn-content p {
+        color: white;
+        text-align: left;
+        width: 200px;
+        margin: 0;
+    }
+
+    .btn-content {
+        text-transform: none;
+    }
+
+    .btn-price {
+        font-size: 2rem;
+        text-transform: none;
+    }
+
+    .btn-content-header {
+        font-size: 12px;
+    }
+
+    .description {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .description p {
+        width: 100%;
+        color:#3063D3;
+        font-size: 20px;
+
+    }
+
+    .footer-content-middle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .footer-content-middle > * {
+        flex: 1;
+    }
+
+    .bonus-desc {
+        width: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .footer-cta-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+
+        margin-top: 2rem;
+    }
+
+    .footer-cta-content > * {
+        flex:1;
+    }
+
+    .footer-content-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-with-icon {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+        margin-top: .5rem;
+    }
+
+    .text-with-icon img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .text-with-icon p {
+        margin: 0;
+        padding: 0;
+        color: #222;
+        font-weight: 300;
+        width: 100%;
+        text-align: left;
+    }
+
+
+   a {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+
+      background-color: #c31919;
+
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    border-bottom: 0.25em solid #770f0f;
+    -moz-transition: 0.1s;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    position: relative;
+
+    padding: 1rem 2rem;
+   } 
+
+   a:hover {
+  background-color: #eb1e1e;
+  border-bottom-width: 0;
+  margin-top: 0.2em;
+}
+
+   img {
+    width: 64px;
+    height: 64px;
+   }
+
+   .btn-container {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background-color: #3063D3;
+   }
+
+   @media (max-width: 1279px) {
+
+    section {
+        padding: 2rem 1.5rem;
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 18px;
+        padding: 1rem .5rem;
+    }
+
+    .extra-text {
+        padding: 3rem 0;
+    }
+
+    .bonus-desc {
+        margin-top: 2rem;
+    }
+
+    .footer-cta-content {
+        flex-direction: column;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    p {
+        width: 100%;
+    }
+
+    .footer-content-middle {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .btn-content p {
+        width: auto;
+    }
+
+    a {
+        font-size: 16px;
+        padding: 14px 24px;
+        justify-content: space-between;
+    }
+
+    .btn-container {
+        padding: 14px 24px;
+        width: 100%;
+    }
+
+     img {
+        width: 20%;
+     }
+
+     .description p{
+        margin-bottom: 0;
+     }
+
+     li {
+        margin-top: 15px;
+     }
+
+     .text-with-icon p {
+        line-height: 20px;
+     }
+
+     .text-with-icon {
+        align-items: center;
+     }
+
+   }
+
+</style>

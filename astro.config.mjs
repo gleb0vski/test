@@ -1,19 +1,15 @@
 import { sanityIntegration } from '@sanity/astro';
 import { defineConfig } from 'astro/config';
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
 export default defineConfig({
-
-    site: 'https://ego-trade.ru/',
-
-    integrations: [
-        sanityIntegration({
-            projectId: '5lzavdfu',
-            dataset: 'production',
-            apiVersion: "2024-03-11",
-            useCdn: false
-        }),
-    ],
-   
-
+  site: 'https://ego-trade.ru/',
+  integrations: [sanityIntegration({
+    projectId: '5lzavdfu',
+    dataset: 'production',
+    apiVersion: "2024-03-11",
+    useCdn: false
+  }), tailwind()]
 });
