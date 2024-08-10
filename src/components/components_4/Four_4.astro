@@ -5,7 +5,7 @@
 <section>
     <!-- Icon Blocks -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <h2 class="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200">Главная цель моего обучения –  помочь вам<br> изменить качество своей жизни</h2>
+    <h2 class="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200 uppercase"><span class="text-blue-600">Главная цель моего обучения </span>–  помочь вам<br> изменить качество своей жизни</h2>
   <div class="max-w-4xl mx-auto">
     <!-- Grid -->
     <div class="grid md:grid-cols-2 gap-6 lg:gap-16">
@@ -87,7 +87,7 @@
       </div>
       <!-- End Col -->
 
-      <div class="space-y-6 lg:space-y-10">
+      <div class="column2 space-y-6 lg:space-y-10">
         <p class="text-gray-600 dark:text-neutral-400 font-bold text-xl">Что будет после обучения:</p>
         <!-- Icon Block -->
         <div class="flex gap-x-5 sm:gap-x-4">
@@ -144,7 +144,11 @@
     </div>
     <!-- End Grid -->
   </div>
+  <div class="video">
+    <video src="/mov.mp4" controls width="850"></video>
+  </div>
 </div>
+
 <!-- End Icon Blocks -->
 </section>
 
@@ -159,10 +163,30 @@
 
   h2 {
     margin-top: 0;
+    line-height: 48px;
+            font-family: 'SFPRO-heading', sans-serif;
   }
 
   svg {
     width: 36px;
+
+  }
+
+  .video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+  }
+
+  video {
+    border-radius: 1rem;
+  }
+
+  @media (max-width: 1270px) {
+    .column2 {
+      margin-top: 2rem;
+    }
 
   }
 </style>
