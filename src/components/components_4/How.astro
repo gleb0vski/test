@@ -2,7 +2,7 @@
 ---
 
 <section>
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div class="max-w-[74rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <h2><span class="text-blue-600">КАК ПРОХОДИТ</span> МОЕ ОБУЧЕНИЕ?</h2>
         <div class="grid grid-cols-2 mt-24 gap-16">
             <div class="card grid grid-cols-2">
@@ -48,6 +48,10 @@
                </div>
             </div>
         </div>
+        <div class="postheader flex justify-center mt-16">
+            <h3 class="text-blue-600">Шаг за <br><span class="ml-24 text-gray-800">шагом</span></h3>
+        </div>
+        <img class="bg_img" src="/bg_img.png" alt="">
     </div>
 </section>
 
@@ -69,8 +73,17 @@
 
     h3 {
             font-family: 'SFPRO-heading', sans-serif;
-
+            font-size: 36px;
+            text-transform: uppercase;
     }
+
+    .bg_img {
+        position: absolute;
+        width: 20vw;
+        margin-top: -25vw;
+        right: 0;
+    }
+
 
     @media (max-width: 1270px) { 
         section {
@@ -94,6 +107,15 @@
             line-height: 36px;
             padding: 0;
             margin: 0;
+        }
+
+        .bg_img {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            display: block;
+            margin-top: 2rem;
+
         }
 
     }
