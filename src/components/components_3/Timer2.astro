@@ -1,0 +1,151 @@
+---
+---
+
+<div class="timer">
+  <div>
+    <p>Скидка исчезнет через:</p>
+    <p class="timer-desc">Если не понравится – вернём деньги,<br> без лишних вопросов</p>
+  </div>
+    <div id="countdown2">
+    <ul>
+      <li><span id="hours2"></span>Часов</li>
+      <li style="font-size: 32px">:</li>
+      <li><span id="minutes2"></span>Минут</li>
+      <li style="font-size: 32px">:</li>
+      <li><span id="seconds2"></span>Секунд</li>
+    </ul>
+
+    <p class="timer-desc2">Если не понравится – вернём деньги,<br> без лишних вопросов</p>
+
+  </div>
+
+</div>
+
+<style>
+
+  .timer-desc {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .timer-desc2 {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    gap: .5rem;
+  }
+
+  p {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .timer {
+    display: flex;
+    gap: 2rem;
+    padding: 1.9rem 2rem;
+    background-color: #3063D3;
+    color: white;
+
+    align-items: flex-start;
+
+    border-radius: 20px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  span {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+   @media (max-width: 1279px) {
+
+    .timer-desc {
+      display: none;
+    }
+
+    .timer-desc2 {
+      display: block;
+      text-align: center; 
+      font-weight: 400;
+      font-size: 12px;
+      margin-top: 1rem;
+    }
+    .timer {
+      flex-direction: column;
+      padding: 1rem;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    ul {
+      gap: .5rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    li {
+      font-size: 12px;
+    }
+   }
+
+</style>
+
+
+<script>
+
+  
+ var timer2;
+
+var compareDate2 = new Date();
+compareDate2.setDate(compareDate2.getDate() + 2); //just for this demo today + 7 days
+
+timer2 = setInterval(function() {
+  timeBetweenDates2(compareDate2);
+}, 1000);
+
+function timeBetweenDates2(toDate) {
+  var dateEntered2 = toDate;
+  var now2 = new Date();
+  var difference2 = dateEntered2.getTime() - now2.getTime();
+
+  if (difference2 <= 0) {
+
+    // Timer done
+    clearInterval(timer2);
+  
+  } else {
+    
+    var seconds2 = Math.floor(difference2 / 1000);
+    var minutes2 = Math.floor(seconds2 / 60);
+    var hours2 = Math.floor(minutes2 / 60);
+
+    hours2 %= 48;
+    minutes2 %= 60;
+    seconds2 %= 60;
+
+    $("#hours2").text(hours2);
+    $("#minutes2").text(minutes2);
+    $("#seconds2").text(seconds2);
+  }
+}
+
+
+</script>
