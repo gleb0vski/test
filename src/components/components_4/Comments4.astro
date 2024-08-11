@@ -9,6 +9,7 @@ console.log(b.map((item: { image: any; }) => item.image));
 
 
     <section class="testim">
+
         <div class="photos">
             {b.filter((item, index) => index < 6).map((filteredItem) => (
                 <img src={ urlForImage(filteredItem.image).url() } alt="">
@@ -26,15 +27,40 @@ console.log(b.map((item: { image: any; }) => item.image));
                 />
             ))}
         </div>
+    </section>
+    <section class="testim">
+
 
         <div class="photos">
-            {b.filter((item, index) => index > 5).map((filteredItem) => (
+            {b.filter((item, index) => index > 5 && index < 12).map((filteredItem) => (
                 <img src={ urlForImage(filteredItem.image).url() } alt="">
             ))}
         </div>
 
         <div class="t-grid">
-            {b.filter((item, index) => index > 5).map((item) => (
+            {b.filter((item, index) => index > 5 && index < 12).map((item) => (
+                <Tcard
+                    name={item.title}
+                    position={item.position}
+                    img_src={urlForImage(item.image)}
+                    description={item.description}
+                    img_comment={urlForImage(item.image2)}
+                />
+            ))}
+        </div>
+    </section>
+<section class="testim">
+
+
+
+        <div class="photos">
+            {b.filter((item, index) =>  index > 11).map((filteredItem) => (
+                <img src={ urlForImage(filteredItem.image).url() } alt="">
+            ))}
+        </div>
+
+        <div class="t-grid">
+            {b.filter((item, index) => index > 11).map((item) => (
                 <Tcard
                     name={item.title}
                     position={item.position}
@@ -76,7 +102,6 @@ console.log(b.map((item: { image: any; }) => item.image));
     display: flex;
     gap: 2rem;
     align-items: center;
-    margin-top: 4rem;
     justify-content: center;
     padding: 0 0 2rem 0;
 }
