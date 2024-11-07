@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ego-trade.ru/',
+  site: '',
   integrations: [sanityIntegration({
     projectId: '5lzavdfu',
     dataset: 'production',
